@@ -59,7 +59,7 @@ After building the development environment, you're ready to create the services 
 1. Build the docker files
 
 ```console
-foo@bar:~/EU-platform $ docker-compose -f docker-compose.yml -f docker-compose.override.yml build
+foo@bar:~/EU-platform $ docker-compose -f docker-compose.yml -f docker-compose.prod.yml build
 ```
 
 - You can add the flag --remove-orphans to remove the previous unused containers that you created.
@@ -67,10 +67,18 @@ foo@bar:~/EU-platform $ docker-compose -f docker-compose.yml -f docker-compose.o
 2. Run the containers
 
 ```console
-foo@bar:~/EU-platform $ docker-compose -f docker-compose.yml -f docker-compose.override.yml up
+foo@bar:~/EU-platform $ docker-compose -f docker-compose.yml -f docker-compose.prod.yml up
 ```
 
 3. Open your browser at http://localhost (or the remote machine URL).
+
+---
+
+### TODOS
+
+1. Don't forget to update the CORS in the server to secure that the API is only accessed by the curret domain that the app is running on.
+
+2. Generate the SLL certificate to obtain HTTPS.
 
 ---
 
